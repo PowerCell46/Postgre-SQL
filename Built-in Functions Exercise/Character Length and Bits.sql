@@ -1,0 +1,1 @@
+SELECT concat_ws(' ', mountains.mountain_range, peaks.peak_name) AS "Mountain Information", LENGTH(concat_ws(' ', mountains.mountain_range, peaks.peak_name)) AS "Characters Length", BIT_LENGTH(concat_ws(' ', mountains.mountain_range, peaks.peak_name)) AS "Bits of a String" FROM peaks, mountains WHERE peaks.mountain_id = mountains.id;
