@@ -10,12 +10,7 @@ $$
 		
 		WHILE (LENGTH(letters) > 0 AND LENGTH(final_word) > 0) LOOP
 			final_word := replace(final_word, SUBSTRING(letters, 1, 1), ''); -- removing the current chr from the word			
-			
-			IF 
-				LENGTH(letters) = 1 THEN letters := ''; -- updating the value of the letters
-			ELSE 
-				letters := substring(letters, 2, (SELECT LENGTH(letters) - 1));
-			END IF;
+			letters := replace(letters, SUBSTRING(letters, 1, 1), ''); -- removing the current chr from the letters
 			
 		END LOOP;
 		
